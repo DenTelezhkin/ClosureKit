@@ -1,3 +1,6 @@
+![Build Status](https://travis-ci.org/DenHeadless/ClosureKit.png?branch=master) &nbsp;
+![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
+
 # { } Kit
 
 [BlocksKit](https://github.com/zwaldowski/BlocksKit) is great. It allows to replace boring delegate callbacks, target-actions with blocks, making code more readable, and allowing to stay in context of what you are implementing. But with introduction of Swift language there are parts of BlocksKit that fall flat. First of all, lot of methods use `id`, which is bridged to `AnyObject!` in Swift, which does require explicit casts and type checks before you can write any code for objects in closures. Second - it does not allow you to use Swift structs and enums. 
