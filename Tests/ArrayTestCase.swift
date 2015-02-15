@@ -10,8 +10,8 @@ import XCTest
 
 class ArrayTestCase: XCTestCase {
 
-    var ints = [1,2,3]
-    var strings = ["a","b","c"]
+    let ints = [1,2,3]
+    let strings = ["a","b","c"]
     
     func testEach()
     {

@@ -15,6 +15,10 @@
 		9A2BA44F1A90D49F000FD11E /* Array+ClosureKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA4331A90A999000FD11E /* Array+ClosureKit.swift */; };
 		9A2BA4501A90D4A9000FD11E /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA43B1A90B440000FD11E /* Struct.swift */; };
 		9A2BA4511A90D4AC000FD11E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA43E1A90B4B5000FD11E /* Enum.swift */; };
+		9A2BA4531A90D55C000FD11E /* Dictionary+ClosureKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA4521A90D55C000FD11E /* Dictionary+ClosureKit.swift */; };
+		9A2BA4541A90D55C000FD11E /* Dictionary+ClosureKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA4521A90D55C000FD11E /* Dictionary+ClosureKit.swift */; };
+		9A2BA4561A90D758000FD11E /* DictionaryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA4551A90D758000FD11E /* DictionaryTestCase.swift */; };
+		9A2BA4571A90D758000FD11E /* DictionaryTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA4551A90D758000FD11E /* DictionaryTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,8 @@
 		9A2BA43B1A90B440000FD11E /* Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Struct.swift; path = Tests/TestTypes/Struct.swift; sourceTree = SOURCE_ROOT; };
 		9A2BA43E1A90B4B5000FD11E /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Tests/TestTypes/Enum.swift; sourceTree = SOURCE_ROOT; };
 		9A2BA4451A90D2CE000FD11E /* OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A2BA4521A90D55C000FD11E /* Dictionary+ClosureKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+ClosureKit.swift"; path = "ClosureKit/Dictionary+ClosureKit.swift"; sourceTree = "<group>"; };
+		9A2BA4551A90D758000FD11E /* DictionaryTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryTestCase.swift; path = Tests/DictionaryTestCase.swift; sourceTree = SOURCE_ROOT; };
 		9AEEB7621A8F824900332122 /* iOSTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = iOSTests.plist; path = Tests/Target/iOSTests.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -69,6 +75,7 @@
 			children = (
 				9A2BA43A1A90B41B000FD11E /* TestTypes */,
 				9A2BA4361A90A9BA000FD11E /* ArrayTestCase.swift */,
+				9A2BA4551A90D758000FD11E /* DictionaryTestCase.swift */,
 				9A1805EF1A8F801200F0C76F /* Supporting Files */,
 			);
 			path = ClosureKitTests;
@@ -87,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2BA4331A90A999000FD11E /* Array+ClosureKit.swift */,
+				9A2BA4521A90D55C000FD11E /* Dictionary+ClosureKit.swift */,
 			);
 			name = ClosureKit;
 			sourceTree = "<group>";
@@ -196,8 +204,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2BA4371A90A9BA000FD11E /* ArrayTestCase.swift in Sources */,
+				9A2BA4561A90D758000FD11E /* DictionaryTestCase.swift in Sources */,
 				9A2BA4341A90A999000FD11E /* Array+ClosureKit.swift in Sources */,
 				9A2BA43F1A90B4B5000FD11E /* Enum.swift in Sources */,
+				9A2BA4531A90D55C000FD11E /* Dictionary+ClosureKit.swift in Sources */,
 				9A2BA43C1A90B440000FD11E /* Struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,8 +217,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2BA4501A90D4A9000FD11E /* Struct.swift in Sources */,
+				9A2BA4571A90D758000FD11E /* DictionaryTestCase.swift in Sources */,
 				9A2BA44F1A90D49F000FD11E /* Array+ClosureKit.swift in Sources */,
 				9A2BA4511A90D4AC000FD11E /* Enum.swift in Sources */,
+				9A2BA4541A90D55C000FD11E /* Dictionary+ClosureKit.swift in Sources */,
 				9A2BA44E1A90D494000FD11E /* ArrayTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

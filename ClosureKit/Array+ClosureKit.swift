@@ -10,45 +10,45 @@ import Foundation
 
 extension Array {
     
-    func ck_each(block: (T) -> Void)
+    func ck_each(block: (Element) -> ())
     {
         for element in self {
             block(element)
         }
     }
     
-    func ck_match(block : (T) -> Bool) -> T? {
+    func ck_match(block : (Element) -> Bool) -> Element? {
         return self.filter(block).first
     }
     
-    func ck_select( block : (T) -> Bool) -> [T] {
+    func ck_select( block : (Element) -> Bool) -> [Element] {
         return self.filter(block)
     }
     
-    func ck_reject( block: (T) -> Bool) -> [T] {
+    func ck_reject( block: (Element) -> Bool) -> [Element] {
         return self.ck_select({ element -> Bool in
             return !block(element)
         })
     }
     
-    func ck_map<U>(transform : (T) -> U ) -> [U] {
+    func ck_map<U>(transform : (Element) -> U ) -> [U] {
         return self.map(transform)
     }
     
-    func ck_reduce<U>(initial: U, combine: (U, T) -> U) -> U
+    func ck_reduce<U>(initial: U, combine: (U, Element) -> U) -> U
     {
         return self.reduce(initial, combine: combine)
     }
     
-    func ck_any( block: (T) -> Bool) -> Bool {
+    func ck_any( block: (Element) -> Bool) -> Bool {
         return self.ck_match(block) != nil
     }
     
-    func ck_none( block: (T) -> Bool) -> Bool {
+    func ck_none( block: (Element) -> Bool) -> Bool {
         return self.ck_match(block) == nil
     }
     
-    func ck_all( block: (T) -> Bool) -> Bool {
+    func ck_all( block: (Element) -> Bool) -> Bool {
         for (index, value) in enumerate(self) {
             var stop = false;
             stop = block(value)
