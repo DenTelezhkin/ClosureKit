@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 MLSDev. All rights reserved.
 //
 
-import Foundation
-
 extension Array {
     
     func ck_each(block: (Element) -> ())
@@ -57,5 +55,29 @@ extension Array {
             }
         }
         return true
+    }
+    
+    mutating func ck_performSelect(block: (Element) -> Bool) {
+        var indexes = [Int]()
+        for (index,element) in enumerate(self) {
+            if !block(element) { indexes.append(index)}
+        }
+        
+        self.removeAtIndexes(indexes)
+    }
+    
+    mutating func ck_performReject(block: (Element) -> Bool) {
+        return self.ck_performSelect({ (element) -> Bool in
+            return !block(element)
+        })
+    }
+}
+
+private extension Array
+{
+    mutating func removeAtIndexes( indexes: [Int]) {
+        for index in indexes.sorted(>) {
+            self.removeAtIndex(index)
+        }
     }
 }

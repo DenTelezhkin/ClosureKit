@@ -40,6 +40,15 @@ extension Dictionary {
         return result
     }
     
+    func ck_map<U>(block: (Key,Value) -> U) -> [Key:U]
+    {
+        var result = [Key:U]()
+        self.ck_each { (key, value) -> () in
+            result[key] = block(key,value)
+        }
+        return result
+    }
+    
     func ck_reject( block: (Element) -> Bool) -> [Key:Value]
     {
         return self.ck_select({ (key,value) -> Bool in
@@ -62,5 +71,27 @@ extension Dictionary {
             }
         }
         return true
+    }
+    
+    mutating func ck_performSelect( block: (Key,Value) -> Bool)
+    {
+        var keysToRemove = [Key]()
+        
+        for (key,value) in self {
+            if !block(key,value) {
+                keysToRemove.append(key)
+            }
+        }
+        
+        for key in keysToRemove {
+            self.removeValueForKey(key)
+        }
+    }
+    
+    mutating func ck_performReject( block: (Element) -> Bool)
+    {
+        self.ck_performSelect { (key, value) -> Bool in
+            return !block(key,value)
+        }
     }
 }

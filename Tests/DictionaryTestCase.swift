@@ -61,6 +61,17 @@ class DictionaryTestCase: XCTestCase {
         XCTAssertEqual(moreThanFour.count,0)
     }
     
+    func testMap() {
+        let transformed = dictionary.ck_map { (key, value) -> String in
+            return "\(key)" + value
+        }
+        
+        XCTAssert(transformed[1] == "1a")
+        XCTAssert(transformed[2] == "2b")
+        XCTAssert(transformed[3] == "3c")
+        XCTAssertEqual(transformed.count, 3)
+    }
+    
     func testReject() {
         let rejectMoreThan1 = dictionary.ck_reject { (key,value) -> Bool in
             return key > 1
@@ -109,5 +120,29 @@ class DictionaryTestCase: XCTestCase {
         
         XCTAssert(all)
         XCTAssertFalse(some)
+    }
+    
+    func testPerformSelect()
+    {
+        var mutableDictionary = [1:Struct(int: 1, string: "a"),2:Struct(int: 2, string: "b")]
+        
+        mutableDictionary.ck_performSelect { (key,value) -> Bool in
+            return value.int > 1
+        }
+        
+        XCTAssertEqual(mutableDictionary.count, 1)
+        XCTAssert(mutableDictionary[2]?.string == "b")
+    }
+    
+    func testPerformReject()
+    {
+        var mutableDictionary = [1:Enum.Foo,2:Enum.Bar]
+        
+        mutableDictionary.ck_performReject { (key,value) -> Bool in
+            return value == Enum.Bar
+        }
+        
+        XCTAssertEqual(mutableDictionary.count, 1)
+        XCTAssert(mutableDictionary[1] == Enum.Foo)
     }
 }

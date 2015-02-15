@@ -92,4 +92,24 @@ class ArrayTestCase: XCTestCase {
         XCTAssert(none)
         XCTAssertFalse(some)
     }
+    
+    func testPerformSelect()
+    {
+        var mutableInts = [1,2,3]
+        mutableInts.ck_performSelect { (element) -> Bool in
+            return element > 1
+        }
+        
+        XCTAssertEqual(mutableInts, [2,3])
+    }
+    
+    func testPerformReject()
+    {
+        var mutableInts = [1,2,3]
+        mutableInts.ck_performReject { (element) -> Bool in
+            return element>2
+        }
+        
+        XCTAssertEqual(mutableInts, [1,2])
+    }
 }
