@@ -15,7 +15,7 @@ This project is **NOT** a replacement for BlocksKit. It's goal is to provide a m
 
 ## Features
 
-### Array
+## Array
 
 #### All - `ck_all`
 
@@ -143,7 +143,7 @@ let filtered = array.ck_select { (element) -> Bool in return element > 0 }
 => [1,2,3]
 ```
 
-### Dictionary
+## Dictionary
 
 #### All - `ck_all`
 
@@ -255,3 +255,7 @@ dictionary.ck_select { (key,value) -> Bool in return key > 1}
 ```
 
 ## Installation
+
+Because of XCode and Swift compiler errors ability to make public extensions on generic classes has been turned off by Apple. This disallows installation via CocoaPods or Embedded framework. When public extensions will be enabled, project will be distributed more conveniently( as of **XCode 6.2 beta 5** public extensions are still turned off).
+
+The only supported way of installing project is via git submodules and drag and drop to project.
