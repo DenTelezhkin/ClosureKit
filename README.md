@@ -256,6 +256,6 @@ dictionary.ck_select { (key,value) -> Bool in return key > 1}
 
 ## Installation
 
-Because of XCode and Swift compiler errors ability to make public extensions on generic classes has been turned off by Apple. This disallows installation via CocoaPods or Embedded framework. When public extensions will be enabled, project will be distributed more conveniently( as of **XCode 6.2 beta 5** public extensions are still turned off).
+Because of XCode and Swift compiler errors ability to make public extensions on generic classes has been turned off by Apple. This disallows installation via CocoaPods or as Embedded framework. When public extensions will be enabled, project will be distributed more conveniently( as of **XCode 6.2 beta 5** public extensions are still turned off).
 
 The only supported way of installing project is via git submodules and drag and drop to project.
