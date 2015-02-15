@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A2BA4271A8F82DC000FD11E"
-               BuildableName = "MacOSTests.xctest"
-               BlueprintName = "MacOSTests"
+               BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
+               BuildableName = "OSX Tests.xctest"
+               BlueprintName = "OSX Tests"
                ReferencedContainer = "container:ClosureKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A2BA4271A8F82DC000FD11E"
-               BuildableName = "MacOSTests.xctest"
-               BlueprintName = "MacOSTests"
+               BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
+               BuildableName = "OSX Tests.xctest"
+               BlueprintName = "OSX Tests"
                ReferencedContainer = "container:ClosureKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,12 +42,18 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A2BA4271A8F82DC000FD11E"
-            BuildableName = "MacOSTests.xctest"
-            BlueprintName = "MacOSTests"
+            BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
+            BuildableName = "OSX Tests.xctest"
+            BlueprintName = "OSX Tests"
             ReferencedContainer = "container:ClosureKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "xctest Self"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -61,9 +67,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A2BA4271A8F82DC000FD11E"
-            BuildableName = "MacOSTests.xctest"
-            BlueprintName = "MacOSTests"
+            BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
+            BuildableName = "OSX Tests.xctest"
+            BlueprintName = "OSX Tests"
             ReferencedContainer = "container:ClosureKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,9 +85,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A2BA4271A8F82DC000FD11E"
-            BuildableName = "MacOSTests.xctest"
-            BlueprintName = "MacOSTests"
+            BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
+            BuildableName = "OSX Tests.xctest"
+            BlueprintName = "OSX Tests"
             ReferencedContainer = "container:ClosureKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
