@@ -14,6 +14,7 @@ This project is **NOT** a replacement for BlocksKit. It's goal is to provide a m
 - [Features](#features)
   - [Array](#array)
   - [Dictionary](#dictionary)
+- [Requirements](#requirements)
 - [Installation](#installation)
 
 ## Features
@@ -256,6 +257,11 @@ let dictionary = [1:"a",2:"b",3:"c"]
 dictionary.ck_select { (key,value) -> Bool in return key > 1}
 => [2:"b",3:"c"]
 ```
+
+## Requirements
+
+- iOS 7 and higher / Mac OS X 10.9 or higher
+- If you are using CocoaPods or embedded frameworks - iOS 8 and higher / Mac OS X 10.10 or higher.
 
 ## Installation
 
