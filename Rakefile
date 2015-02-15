@@ -1,0 +1,28 @@
+require 'xcpretty'
+ 
+namespace :test do
+
+  desc "Run ClosureKit Tests for iOS"
+  task :ios do
+    $ios_success = system("set -o pipefail && xcodebuild clean test -scheme 'iOS Tests' -destination 'name=iPhone 6' | xcpretty -tc")
+  end
+
+  desc "Run ClosureKit Tests for Mac OS X"
+  task :osx do
+    $osx_success = system("set -o pipefail && xcodebuild clean test -scheme 'OSX Tests' | xcpretty -tc")
+  end
+end
+
+desc "Run ClosureKit Tests for iOS & Mac OS X"
+task :test => ['test:ios', 'test:osx'] do
+  puts "\033[0;31m! iOS unit tests failed" unless $ios_success
+  puts "\033[0;31m! OS X unit tests failed" unless $osx_success
+  if $ios_success && $osx_success
+    puts "\033[0;32m** All tests executed successfully"
+    exit(0)
+  else
+    exit(-1)
+  end
+end
+
+task :default => 'test'
