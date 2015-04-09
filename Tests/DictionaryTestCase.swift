@@ -26,7 +26,7 @@ class DictionaryTestCase: XCTestCase {
         XCTAssert(contains(stringSum, "a") &&
             contains(stringSum, "b") &&
             contains(stringSum, "c") &&
-            stringSum.utf16Count == 3)
+            count(stringSum.utf16) == 3)
     }
     
     func testMatch()

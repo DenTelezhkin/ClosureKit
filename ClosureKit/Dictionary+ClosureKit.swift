@@ -95,7 +95,7 @@ extension Dictionary {
     /// Filter dictionary, deleting all key-value pairs, that match provided block. This is reverse for ck_performSelect method.
     ///
     /// :param: block matching block
-    mutating func ck_performReject( block: (Element) -> Bool)
+    mutating func ck_performReject( block: (Key,Value) -> Bool)
     {
         self.ck_performSelect { (key, value) -> Bool in
             return !block(key,value)
@@ -106,7 +106,7 @@ extension Dictionary {
     ///
     /// :param: block matching block
     /// :returns: Dictionary, containing key-value pairs, that do not match block
-    func ck_reject( block: (Element) -> Bool) -> [Key:Value]
+    func ck_reject( block: (Key,Value) -> Bool) -> [Key:Value]
     {
         return self.ck_select({ (key,value) -> Bool in
             return !block(key,value)
