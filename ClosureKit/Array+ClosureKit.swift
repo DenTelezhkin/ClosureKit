@@ -15,9 +15,9 @@ public extension Array {
     func ck_all( block: (Element) -> Bool) -> Bool {
         for (_, value) in self.enumerate() {
             var stop = false
-            stop = block(value)
+            stop = !block(value)
             if stop {
-                return false;
+                return false
             }
         }
         return true

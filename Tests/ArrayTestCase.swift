@@ -15,9 +15,9 @@ class ArrayTestCase: XCTestCase {
     let strings = ["a","b","c"]
     
     func testAll() {
-        let dict = [1:2, 3:4]
-        XCTAssertTrue(dict.ck_all { $0.0 > 0 } )
-        XCTAssertFalse(dict.ck_all { $0.1 < 3} )
+        let array = [1, 2, 3, 4]
+        XCTAssertTrue(array.ck_all { $0 > 0 } )
+        XCTAssertFalse(array.ck_all { $0 < 3} )
     }
 
     func testEach()
@@ -56,6 +56,13 @@ class ArrayTestCase: XCTestCase {
         if foundStruct != nil {
             XCTAssertEqual(foundStruct!.string, "c")
         }
+    }
+    
+    func testReduce() {
+        let array = [1,2,4,7]
+        let sum = array.ck_reduce(1) { $0 + $1 }
+        
+        XCTAssertEqual(sum, 15)
     }
     
     func testReject() {
