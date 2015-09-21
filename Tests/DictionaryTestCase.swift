@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import ClosureKit
 
 class DictionaryTestCase: XCTestCase {
 
@@ -23,10 +24,10 @@ class DictionaryTestCase: XCTestCase {
         }
         
         XCTAssertEqual(intSum, 6)
-        XCTAssert(contains(stringSum, "a") &&
-            contains(stringSum, "b") &&
-            contains(stringSum, "c") &&
-            count(stringSum.utf16) == 3)
+        XCTAssert(stringSum.characters.contains("a") &&
+            stringSum.characters.contains("b") &&
+            stringSum.characters.contains("c") &&
+            stringSum.utf16.count == 3)
     }
     
     func testMatch()

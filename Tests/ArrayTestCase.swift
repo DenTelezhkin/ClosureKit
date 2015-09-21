@@ -7,12 +7,19 @@
 //
 
 import XCTest
+import ClosureKit
 
 class ArrayTestCase: XCTestCase {
 
     let ints = [1,2,3]
     let strings = ["a","b","c"]
     
+    func testAll() {
+        let dict = [1:2, 3:4]
+        XCTAssertTrue(dict.ck_all { $0.0 > 0 } )
+        XCTAssertFalse(dict.ck_all { $0.1 < 3} )
+    }
+
     func testEach()
     {
         var total = 0
