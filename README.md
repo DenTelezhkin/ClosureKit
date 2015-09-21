@@ -1,8 +1,8 @@
+![Build Status](https://travis-ci.org/DenHeadless/ClosureKit.png?branch=master) &nbsp;
 [![codecov.io](http://codecov.io/github/DenHeadless/ClosureKit/coverage.svg?branch=master)](http://codecov.io/github/DenHeadless/ClosureKit?branch=master)
 ![CocoaPod platform](https://cocoapod-badges.herokuapp.com/p/ClosureKit/badge.png) &nbsp;
 ![CocoaPod version](https://cocoapod-badges.herokuapp.com/v/ClosureKit/badge.png) &nbsp;
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![Build Status](https://travis-ci.org/DenHeadless/ClosureKit.png?branch=master) &nbsp;
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 
 # { } Kit
@@ -60,7 +60,7 @@ Loops over array, executing block for each element.
 ```swift
 let array = [1,2,3]
 array.ck_each { element in
-  println(element)
+  print(element)
 }
 => 1 2 3
 ```
@@ -264,11 +264,19 @@ dictionary.ck_select { (key,value) -> Bool in return key > 1}
 
 ## Requirements
 
-- iOS 7 and higher / Mac OS X 10.9 or higher
-- If you are using CocoaPods or embedded frameworks - iOS 8 and higher / Mac OS X 10.10 or higher.
+- iOS 8 and higher / Mac OS X 10.10 or higher
+- Swift 2
 
 ## Installation
 
-Because of XCode and Swift compiler errors ability to make public extensions on generic classes has been turned off by Apple. This disallows installation via CocoaPods or as Embedded framework. When public extensions will be enabled, project will be distributed more conveniently( as of **XCode 6.2 beta 5** public extensions are still turned off).
+- CocoaPods
 
-The only supported way of installing project is via git submodules and drag and drop to project.
+```ruby
+   pod 'ClosureKit', '~> 0.2.0'
+```
+
+- Carthage
+
+```
+  github "DenHeadless/ClosureKit"
+```
