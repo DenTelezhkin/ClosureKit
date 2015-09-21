@@ -1,9 +1,13 @@
+[![codecov.io](http://codecov.io/github/DenHeadless/ClosureKit/coverage.svg?branch=master)](http://codecov.io/github/DenHeadless/ClosureKit?branch=master)
+![CocoaPod platform](https://cocoapod-badges.herokuapp.com/p/ClosureKit/badge.png) &nbsp;
+![CocoaPod version](https://cocoapod-badges.herokuapp.com/v/ClosureKit/badge.png) &nbsp;
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Build Status](https://travis-ci.org/DenHeadless/ClosureKit.png?branch=master) &nbsp;
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 
 # { } Kit
 
-[BlocksKit](https://github.com/zwaldowski/BlocksKit) is great. It allows to replace boring delegate callbacks, target-actions with blocks, making code more readable, and allowing to stay in context of what you are implementing. But with introduction of Swift language there are parts of BlocksKit that fall flat. First of all, lot of methods use `id`, which is bridged to `AnyObject!` in Swift, which does require explicit casts and type checks before you can write any code for objects in closures. Second - it does not allow you to use Swift structs and enums. 
+[BlocksKit](https://github.com/zwaldowski/BlocksKit) is great. It allows to replace boring delegate callbacks, target-actions with blocks, making code more readable, and allowing to stay in context of what you are implementing. But with introduction of Swift language there are parts of BlocksKit that fall flat. First of all, lot of methods use `id`, which is bridged to `AnyObject!` in Swift, which does require explicit casts and type checks before you can write any code for objects in closures. Second - it does not allow you to use Swift structs and enums.
 
 `ClosureKit` bridges this gap. It provides generic implementation for the same methods as BlocksKit, that allows you to skip type checks and casts, and also allows usage of pure Swift enums and structs.
 
@@ -49,7 +53,7 @@ array.ck_any { (element) -> Bool in return element > 2}
 => true
 ```
 
-#### Each - `ck_each` 
+#### Each - `ck_each`
 
 Loops over array, executing block for each element.
 
@@ -202,7 +206,7 @@ Find first element in Dictionary that is matching the block. If none matches, re
 ```swift
 let dictionary = [1:"a",2:"b",3:"c"]
 if let (key,value) = dictionary.ck_match {(key,value) -> Bool in return key > 2} {
-  println("\(key)"+value) 
+  println("\(key)"+value)
 }
 => 3c
 ```
