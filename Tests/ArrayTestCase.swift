@@ -58,26 +58,11 @@ class ArrayTestCase: XCTestCase {
         }
     }
     
-    func testReduce() {
-        let array = [1,2,4,7]
-        let sum = array.ck_reduce(1) { $0 + $1 }
-        
-        XCTAssertEqual(sum, 15)
-    }
-    
     func testReject() {
-        let foo = ints.ck_reject { (element) -> Bool in
-            return element > 1
+        let foo = ints.filter { (element) -> Bool in
+            return element <= 1
         }
         XCTAssertEqual(foo, [1])
-    }
-    
-    func testMap() {
-        let transformed = ints.ck_map { (element) -> String in
-            return self.strings[element-1]
-        }
-        
-        XCTAssertEqual(transformed, strings)
     }
     
     func testAny()

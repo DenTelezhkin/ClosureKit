@@ -62,17 +62,6 @@ class DictionaryTestCase: XCTestCase {
         XCTAssertEqual(moreThanFour.count,0)
     }
     
-    func testMap() {
-        let transformed = dictionary.ck_map { (key, value) -> String in
-            return "\(key)" + value
-        }
-        
-        XCTAssert(transformed[1] == "1a")
-        XCTAssert(transformed[2] == "2b")
-        XCTAssert(transformed[3] == "3c")
-        XCTAssertEqual(transformed.count, 3)
-    }
-    
     func testReject() {
         let rejectMoreThan1 = dictionary.ck_reject { (key,value) -> Bool in
             return key > 1

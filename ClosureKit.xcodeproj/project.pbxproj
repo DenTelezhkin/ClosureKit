@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A12CB101BB7F2310081B35C /* CollectionType+ClosureKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A12CB0F1BB7F2310081B35C /* CollectionType+ClosureKit.swift */; settings = {ASSET_TAGS = (); }; };
+		9A12CB111BB7F2310081B35C /* CollectionType+ClosureKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A12CB0F1BB7F2310081B35C /* CollectionType+ClosureKit.swift */; settings = {ASSET_TAGS = (); }; };
 		9A2BA4371A90A9BA000FD11E /* ArrayTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA4361A90A9BA000FD11E /* ArrayTestCase.swift */; };
 		9A2BA43C1A90B440000FD11E /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA43B1A90B440000FD11E /* Struct.swift */; };
 		9A2BA43F1A90B4B5000FD11E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BA43E1A90B4B5000FD11E /* Enum.swift */; };
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A12CB0F1BB7F2310081B35C /* CollectionType+ClosureKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CollectionType+ClosureKit.swift"; path = "ClosureKit/CollectionType+ClosureKit.swift"; sourceTree = "<group>"; };
 		9A1805EB1A8F801200F0C76F /* iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2BA4311A8F831D000FD11E /* MacOSTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MacOSTests.plist; path = Tests/Target/MacOSTests.plist; sourceTree = SOURCE_ROOT; };
 		9A2BA4331A90A999000FD11E /* Array+ClosureKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+ClosureKit.swift"; path = "ClosureKit/Array+ClosureKit.swift"; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 			children = (
 				9A2BA4331A90A999000FD11E /* Array+ClosureKit.swift */,
 				9A2BA4521A90D55C000FD11E /* Dictionary+ClosureKit.swift */,
+				9A12CB0F1BB7F2310081B35C /* CollectionType+ClosureKit.swift */,
 			);
 			name = ClosureKit;
 			sourceTree = "<group>";
@@ -368,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9091AF1BB0350100DC826E /* Dictionary+ClosureKit.swift in Sources */,
+				9A12CB101BB7F2310081B35C /* CollectionType+ClosureKit.swift in Sources */,
 				9A9091AE1BB0350100DC826E /* Array+ClosureKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9091B11BB0350200DC826E /* Dictionary+ClosureKit.swift in Sources */,
+				9A12CB111BB7F2310081B35C /* CollectionType+ClosureKit.swift in Sources */,
 				9A9091B01BB0350200DC826E /* Array+ClosureKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

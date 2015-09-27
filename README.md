@@ -16,6 +16,7 @@ This project is **NOT** a replacement for BlocksKit. It's goal is to provide a m
 ## Contents ##
 
 - [Features](#features)
+  - [CollectionType](#collectiontype)
   - [Array](#array)
   - [Dictionary](#dictionary)
 - [Requirements](#requirements)
@@ -23,57 +24,46 @@ This project is **NOT** a replacement for BlocksKit. It's goal is to provide a m
 
 ## Features
 
-## Array
+## CollectionType
 
 #### All - `ck_all`
 
-Verify, that all objects in array match provided block.
+Verify, that all objects in collection match provided block.
 
 ```swift
-let array = [1,2,3]
+let collection = [1,2,3]
 
-array.ck_all { (element) -> Bool in return element > 0 }
+collection.ck_all { (element) -> Bool in return element > 0 }
 => true
 
-array.ck_all { (element) -> Bool in return element < 2 }
+collection.ck_all { (element) -> Bool in return element < 2 }
 => false
 ```
 
 #### Any - `ck_any`
 
-Verify that at least one object in array matches the block.
+Verify that at least one object in collection matches the block.
 
 ```swift
-let array = [1,2,3]
+let collection = [1,2,3]
 
-array.ck_any {(element) -> Bool in return element < 0}
+collection.ck_any {(element) -> Bool in return element < 0}
 => false
 
-array.ck_any { (element) -> Bool in return element > 2}
+collection.ck_any { (element) -> Bool in return element > 2}
 => true
 ```
 
 #### Each - `ck_each`
 
-Loops over array, executing block for each element.
+Loops over collection, executing block for each element.
 
 ```swift
 let array = [1,2,3]
-array.ck_each { element in
+collection.ck_each { element in
   print(element)
 }
 => 1 2 3
-```
-
-#### Map - `ck_map`
-
-Create array of new values, that is constructed by calling block on each element of current array.
-
-```swift
-let array = [1,2,3]
-
-let stringsArray = array.ck_map { (element) -> String in return "\(element)"}
-=> ["1","2","3"]
 ```
 
 #### Match - `ck_match`
@@ -81,20 +71,22 @@ let stringsArray = array.ck_map { (element) -> String in return "\(element)"}
 Find first object, that match provided block
 
 ```swift
-let array = [1,2,3]
-println(array.ck_match {(element) -> Bool in  return element > 2})
+let collection = [1,2,3]
+println(collection.ck_match {(element) -> Bool in  return element > 2})
 => 3
 ```
 
 ### None - `ck_none`
 
-Verify that all objects in array do not match the block.
+Verify that all objects in collection do not match the block.
 
 ```swift
-let array = [1,2,3]
-array.ck_none { (element) -> Bool in return element < 0 }
+let collection = [1,2,3]
+collection.ck_none { (element) -> Bool in return element < 0 }
 => true
 ```
+
+## Array
 
 ### Perform select - `ck_performSelect`
 
@@ -119,108 +111,8 @@ println(array)
 => [1,2,3]
 ```
 
-### Reduce - `ck_reduce`
-
-Accumulate objects using block
-
-```swift
-var array = [1,2,3]
-array.ck_reduce(initial: 0, combine: { (sum,element) -> Int in
-  return sum += element
-}
-=> 6
-```
-
-### Reject - `ck_reject`
-
-Find elements that do not match provided block. This is reverse for `ck_select` method.
-
-```swift
-let array = [1,2,-1,-2,3]
-let filtered =array.ck_reject { (element) -> Bool in return element < 0 }
-=> [1,2,3]
-```
-
-### Select - `ck_select`
-
-Find all elements in array, that match provided block.
-
-```swift
-let array = [1, 2, -1, -2, 3]
-let filtered = array.ck_select { (element) -> Bool in return element > 0 }
-=> [1,2,3]
-```
-
 ## Dictionary
 
-#### All - `ck_all`
-
-Verify, that all key-value pairs match provided block.
-
-```swift
-let dictionary = [1:"a",2:"b",3:"c"]
-
-dictionary.ck_all { (key,value) -> Bool in return key > 0}
-=> true
-
-dictionary.ck_all { (key,value) -> Bool in return value == "d" }
-=> false
-```
-
-#### Any - `ck_any`
-
-Verify that at least one key-value matches block.
-
-```swift
-let dictionary = [1:"a",2:"b",3:"c"]
-
-dictionary.ck_any { (key,value) -> Bool in return key > 2 }
-=> true
-```
-
-#### Each - `ck_each`
-
-Loops over elements in Dictionary and executes given block with eack key value tuple.
-
-```swift
-dictionary.ck_each { (key,value) in println("\(key): \(value)") }
-
-// prints all keys and values
-```
-
-#### Map - `ck_map`
-
-Create dictionary with transformed values. Keys of new dictionary remain the same, but values are a result of executing provided block on key-value pair in current dictionary
-
-```swift
-let dictionary = [1:"a",2:"b",3:"c"]
-
-let transformed = dictionary.ck_map { (key,value) -> String in return "\(key)" + value }
-=> [1:"1a",2:"2b",3:"3c"]
-```
-
-#### Match - `ck_match`
-
-Find first element in Dictionary that is matching the block. If none matches, return nil.
-
-```swift
-let dictionary = [1:"a",2:"b",3:"c"]
-if let (key,value) = dictionary.ck_match {(key,value) -> Bool in return key > 2} {
-  println("\(key)"+value)
-}
-=> 3c
-```
-
-#### None - `ck_none`
-
-Verify, that none of the key-value pairs match provided block.
-
-```swift
-let dictionary = [1:"a",2:"b",3:"c"]
-
-dictionary.ck_none { (key,value) -> Bool in return key > 3 }
-=> true
-```
 
 #### Perform select - `ck_performSelect`
 
@@ -272,7 +164,7 @@ dictionary.ck_select { (key,value) -> Bool in return key > 1}
 - CocoaPods
 
 ```ruby
-   pod 'ClosureKit', '~> 0.2.0'
+   pod 'ClosureKit', '~> 0.3.0'
 ```
 
 - Carthage
