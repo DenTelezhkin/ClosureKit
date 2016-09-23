@@ -54,18 +54,6 @@ collection.ck_any { (element) -> Bool in return element > 2}
 => true
 ```
 
-#### Each - `ck_each`
-
-Loops over collection, executing block for each element.
-
-```swift
-let array = [1,2,3]
-collection.ck_each { element in
-  print(element)
-}
-=> 1 2 3
-```
-
 #### Match - `ck_match`
 
 Find first object, that match provided block
@@ -156,15 +144,16 @@ dictionary.ck_select { (key,value) -> Bool in return key > 1}
 
 ## Requirements
 
-- iOS 8 and higher / Mac OS X 10.10 or higher
-- Swift 2
+- iOS 8 / macOS 10.10 / tvOS 9.0 / watchOS 2.0
+- Swift 3
+- Xcode 8
 
 ## Installation
 
 - CocoaPods
 
 ```ruby
-   pod 'ClosureKit', '~> 0.3.0'
+   pod 'ClosureKit', '~> 1.0.0'
 ```
 
 - Carthage
