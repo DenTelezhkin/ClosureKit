@@ -1,11 +1,17 @@
-sudo: false
-osx_image: xcode7
 language: objective-c
+osx_image: xcode8
 
-before_install:
-  - gem install xcpretty --no-document --quiet
+env:
+  - ACTION=test  PLATFORM=Mac     DESTINATION='platform=OS X'
+  - ACTION=test  PLATFORM=iOS     DESTINATION='platform=iOS Simulator,name=iPhone 6S'
+  - ACTION=build PLATFORM=watchOS DESTINATION='platform=watchOS Simulator,name=Apple Watch - 38mm'
+  - ACTION=test  PLATFORM=tvOS    DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
-script: "rake"
+install:
+  - test -f Cartfile* && carthage bootstrap --platform $PLATFORM
+
+script:
+  - set -o pipefail && xcodebuild -scheme ClosureKit -destination "$DESTINATION" $ACTION | xcpretty
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)

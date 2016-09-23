@@ -7,13 +7,13 @@
 //
 
 enum Enum {
-    case Foo
-    case Bar
+    case foo
+    case bar
 }
 
 extension Enum {
     static func enumArray() -> [Enum]
     {
-        return [.Foo,.Bar]
+        return [.foo,.bar]
     }
 }

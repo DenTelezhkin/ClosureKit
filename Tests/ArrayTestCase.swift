@@ -19,21 +19,6 @@ class ArrayTestCase: XCTestCase {
         XCTAssertTrue(array.ck_all { $0 > 0 } )
         XCTAssertFalse(array.ck_all { $0 < 3} )
     }
-
-    func testEach()
-    {
-        var total = 0
-        var totalStrings = ""
-        ints.ck_each { (element) -> Void in
-            total += element
-        }
-        strings.ck_each { (element) -> Void in
-            totalStrings += element
-        }
-        
-        XCTAssertEqual(total, 6)
-        XCTAssertEqual(totalStrings, "abc")
-    }
     
     func testMatch() {
         let moreThan1 = ints.ck_match { (element) -> Bool in

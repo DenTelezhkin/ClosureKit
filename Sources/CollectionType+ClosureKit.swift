@@ -8,23 +8,14 @@
 
 import Foundation
 
-public extension CollectionType
+public extension Collection
 {
-    /// Loops over elements in Collection and executes given block with each element.
-    ///
-    /// - parameter block: block to execute
-    func ck_each(block: Self.Generator.Element -> Void) {
-        for element in self {
-            block(element)
-        }
-    }
-    
     /// Find first element in Collection that is matching the block.
     /// If none matches, return nil
     ///
     /// - parameter block: block to match against
     /// - returns: Object, if found, nil if not.
-    func ck_match(block : Self.Generator.Element -> Bool) -> Self.Generator.Element? {
+    func ck_match(_ block : (Self.Iterator.Element) -> Bool) -> Self.Iterator.Element? {
         return self.filter(block).first
     }
     
@@ -32,7 +23,7 @@ public extension CollectionType
     ///
     /// - parameter block: matching block
     /// - returns: true, if any object matches the block. If none matches - false
-    func ck_any(block : Self.Generator.Element -> Bool) -> Bool {
+    func ck_any(_ block : (Self.Iterator.Element) -> Bool) -> Bool {
         return self.ck_match(block) != nil
     }
     
@@ -40,7 +31,7 @@ public extension CollectionType
     ///
     /// - parameter block: matching block
     /// - returns: true, if no objects match the block. If any object matches - false
-    func ck_none(block: Self.Generator.Element -> Bool) -> Bool {
+    func ck_none(_ block: (Self.Iterator.Element) -> Bool) -> Bool {
         return self.ck_match(block) == nil
     }
     
@@ -48,8 +39,8 @@ public extension CollectionType
     ///
     /// - parameter block: matching block
     /// - returns: true, if all objects match the block. If any object does not match - false
-    func ck_all(block: Self.Generator.Element -> Bool) -> Bool {
-        for (_, value) in self.enumerate() {
+    func ck_all(_ block: (Self.Iterator.Element) -> Bool) -> Bool {
+        for (_, value) in self.enumerated() {
             var stop = false
             stop = !block(value)
             if stop {

@@ -13,23 +13,6 @@ class DictionaryTestCase: XCTestCase {
 
     let dictionary = [1: "a", 2: "b", 3: "c"]
     
-    func testEach()
-    {
-        var intSum = 0
-        var stringSum = ""
-        
-        dictionary.ck_each { (key, value) in
-            intSum += key
-            stringSum += value
-        }
-        
-        XCTAssertEqual(intSum, 6)
-        XCTAssert(stringSum.characters.contains("a") &&
-            stringSum.characters.contains("b") &&
-            stringSum.characters.contains("c") &&
-            stringSum.utf16.count == 3)
-    }
-    
     func testMatch()
     {
         if let (key,value) = dictionary.ck_match({ (key, value) -> Bool in key == 2 }) {
@@ -126,13 +109,13 @@ class DictionaryTestCase: XCTestCase {
     
     func testPerformReject()
     {
-        var mutableDictionary = [1:Enum.Foo,2:Enum.Bar]
+        var mutableDictionary = [1:Enum.foo,2:Enum.bar]
         
         mutableDictionary.ck_performReject { (key,value) -> Bool in
-            return value == Enum.Bar
+            return value == Enum.bar
         }
         
         XCTAssertEqual(mutableDictionary.count, 1)
-        XCTAssert(mutableDictionary[1] == Enum.Foo)
+        XCTAssert(mutableDictionary[1] == Enum.foo)
     }
 }

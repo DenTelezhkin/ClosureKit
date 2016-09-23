@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
-               BuildableName = "OSX Tests.xctest"
-               BlueprintName = "OSX Tests"
+               BlueprintIdentifier = "9A9091981BB034B900DC826E"
+               BuildableName = "ClosureKit.framework"
+               BlueprintName = "ClosureKit"
                ReferencedContainer = "container:ClosureKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
-               BuildableName = "OSX Tests.xctest"
-               BlueprintName = "OSX Tests"
+               BlueprintIdentifier = "9A1805EA1A8F801200F0C76F"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
                ReferencedContainer = "container:ClosureKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,18 +43,12 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
-            BuildableName = "OSX Tests.xctest"
-            BlueprintName = "OSX Tests"
+            BlueprintIdentifier = "9A9091981BB034B900DC826E"
+            BuildableName = "ClosureKit.framework"
+            BlueprintName = "ClosureKit"
             ReferencedContainer = "container:ClosureKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "xctest Self"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -71,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
-            BuildableName = "OSX Tests.xctest"
-            BlueprintName = "OSX Tests"
+            BlueprintIdentifier = "9A9091981BB034B900DC826E"
+            BuildableName = "ClosureKit.framework"
+            BlueprintName = "ClosureKit"
             ReferencedContainer = "container:ClosureKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -89,9 +83,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A2BA4441A90D2CE000FD11E"
-            BuildableName = "OSX Tests.xctest"
-            BlueprintName = "OSX Tests"
+            BlueprintIdentifier = "9A9091981BB034B900DC826E"
+            BuildableName = "ClosureKit.framework"
+            BlueprintName = "ClosureKit"
             ReferencedContainer = "container:ClosureKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

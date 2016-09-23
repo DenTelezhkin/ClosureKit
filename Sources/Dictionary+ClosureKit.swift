@@ -11,7 +11,7 @@ public extension Dictionary {
     /// Filter dictionary, deleting all key-value pairs, that do not match provided block.
     ///
     /// - parameter block: matching block
-    mutating func ck_performSelect( block: (Key,Value) -> Bool)
+    mutating func ck_performSelect( _ block: (Key,Value) -> Bool)
     {
         var keysToRemove = [Key]()
         
@@ -22,14 +22,14 @@ public extension Dictionary {
         }
         
         for key in keysToRemove {
-            self.removeValueForKey(key)
+            self.removeValue(forKey: key)
         }
     }
     
     /// Filter dictionary, deleting all key-value pairs, that match provided block. This is reverse for ck_performSelect method.
     ///
     /// - parameter block: matching block
-    mutating func ck_performReject( block: (Key,Value) -> Bool)
+    mutating func ck_performReject( _ block: (Key,Value) -> Bool)
     {
         self.ck_performSelect { (key, value) -> Bool in
             return !block(key,value)
@@ -40,7 +40,7 @@ public extension Dictionary {
     ///
     /// - parameter block: matching block
     /// - returns: Dictionary, containing key-value pairs, that do not match block
-    func ck_reject( block: (Key,Value) -> Bool) -> [Key:Value]
+    func ck_reject( _ block: (Key,Value) -> Bool) -> [Key:Value]
     {
         return self.ck_select({ (key,value) -> Bool in
             return !block(key,value)
@@ -51,7 +51,7 @@ public extension Dictionary {
     ///
     /// - parameter block: matching block
     /// - returns: Dictionary, containing key-value pairs, that match block
-    func ck_select( block: (Element) -> Bool) -> [Key:Value]
+    func ck_select( _ block: (Key,Value) -> Bool) -> [Key:Value]
     {
         var result: [Key:Value] = Dictionary()
         

@@ -11,9 +11,9 @@ public extension Array {
     /// Filter array, deleting all objects, that do not match block
     ///
     /// - parameter block: matching block.
-    mutating func ck_performSelect(block: (Element) -> Bool) {
+    mutating func ck_performSelect(_ block: (Element) -> Bool) {
         var indexes = [Int]()
-        for (index,element) in self.enumerate() {
+        for (index,element) in self.enumerated() {
             if !block(element) { indexes.append(index)}
         }
         
@@ -23,7 +23,7 @@ public extension Array {
     /// Filter array, deleting all objects, that match block
     ///
     /// - parameter block: matching block
-    mutating func ck_performReject(block: (Element) -> Bool) {
+    mutating func ck_performReject(_ block: (Element) -> Bool) {
         return self.ck_performSelect({ (element) -> Bool in
             return !block(element)
         })
@@ -32,9 +32,9 @@ public extension Array {
 
 private extension Array
 {
-    mutating func removeAtIndexes( indexes: [Int]) {
-        for index in indexes.sort(>) {
-            self.removeAtIndex(index)
+    mutating func removeAtIndexes( _ indexes: [Int]) {
+        for index in indexes.sorted(by: >) {
+            self.remove(at: index)
         }
     }
 }
