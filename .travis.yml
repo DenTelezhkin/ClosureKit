@@ -7,9 +7,6 @@ env:
   - ACTION=build PLATFORM=watchOS DESTINATION='platform=watchOS Simulator,name=Apple Watch - 38mm'
   - ACTION=test  PLATFORM=tvOS    DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
-install:
-  - test -f Cartfile* && carthage bootstrap --platform $PLATFORM
-
 script:
   - set -o pipefail && xcodebuild -scheme ClosureKit -destination "$DESTINATION" $ACTION | xcpretty
 
